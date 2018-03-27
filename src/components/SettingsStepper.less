@@ -1,0 +1,68 @@
+@import "../../node_modules/@likethemammal/overwatch-general/lib/colors.less";
+
+@height: 4.2rem;
+
+.container {
+    padding: 3px 0 6px;
+
+    &:hover {
+        .inner {
+            background: @gray_faded_setting_hover;
+        }
+    }
+
+    //low browser support, so cant be combined with :hover selector
+    &:focus-within {
+        .inner {
+            background: @gray_faded_setting_hover;
+        }
+    }
+}
+
+.inner {
+    composes: cf from '@likethemammal/general-components/bin/general.css';
+    background: @black_faded_setting;
+    transition: background 100ms ease-in;
+}
+
+.label {
+    composes: __text from '@likethemammal/overwatch-general/lib/general.css';
+    position: absolute;
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.stepper {
+    composes: cf from '@likethemammal/general-components/bin/general.css';
+    float: right;
+}
+
+.active {
+    composes: __text from '@likethemammal/overwatch-general/lib/general.css';
+    float: left;
+    width: 300px;
+    text-align: center;
+}
+
+.icon_container {
+    position: relative;
+    left: -1px;
+    display: inline-block;
+    width: @height;
+    padding: 5px 7px;
+    float: left;
+    vertical-align: middle;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: default;
+    }
+
+}
+
+.left, .right {
+    composes: icon_container;
+}
