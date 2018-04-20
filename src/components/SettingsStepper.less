@@ -1,7 +1,5 @@
 @import "../../node_modules/@likethemammal/overwatch-general/lib/colors.less";
 
-@height: 4.2rem;
-
 .container {
     padding: 3px 0 6px;
 
@@ -11,11 +9,8 @@
         }
     }
 
-    //low browser support, so cant be combined with :hover selector
-    &:focus-within {
-        .inner {
-            background: @gray_faded_setting_hover;
-        }
+    * {
+        box-sizing: border-box;
     }
 }
 
@@ -23,6 +18,8 @@
     composes: cf from '@likethemammal/general-components/bin/general.css';
     background: @black_faded_setting;
     transition: background 100ms ease-in;
+    height: 40px;
+    overflow: hidden;
 }
 
 .label {
@@ -35,6 +32,12 @@
 .stepper {
     composes: cf from '@likethemammal/general-components/bin/general.css';
     float: right;
+
+    &:hover {
+        .active {
+            background: @white_faded_row_hover;
+        }
+    }
 }
 
 .active {
@@ -42,13 +45,12 @@
     float: left;
     width: 300px;
     text-align: center;
+    cursor: pointer;
 }
 
 .icon_container {
     position: relative;
-    left: -1px;
-    display: inline-block;
-    width: @height;
+    width: 42px;
     padding: 5px 7px;
     float: left;
     vertical-align: middle;
@@ -59,6 +61,11 @@
     &:disabled {
         opacity: 0.4;
         cursor: default;
+    }
+
+    &:hover:not([disabled]), &:focus:not([disabled]), &:active:not([disabled]) {
+        background: @white_faded_row_hover;
+        outline: 0;
     }
 
 }

@@ -86,6 +86,8 @@ export default class StepperSwitch extends Component {
         const shouldShowLeftStepper = _shouldShowLeftStepper(this.props)
         const shouldShowRightStepper = _shouldShowRightStepper(this.props)
 
+        const onMainStep = shouldShowRightStepper ? this.onStepRight : this.onStepLeft
+
         return <div className={css.container}>
 
             <div className={css.inner}>
@@ -103,7 +105,10 @@ export default class StepperSwitch extends Component {
                             raw={LeftSVG}
                         />
                     </button>
-                    <div className={css.active}>
+                    <div
+                        className={css.active}
+                        onClick={onMainStep}
+                    >
                         {activeOption}
                     </div>
                     <button
