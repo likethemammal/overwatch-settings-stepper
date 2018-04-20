@@ -24,13 +24,19 @@ When using CSS font-face, the font-family should match whats below:
 
 Check out example/index.js for exact usage. Below is a description.
 
+### Components
+
 #### SettingsStepper
 
-The SettingsStepper is the default component thats exported. It expects `options`, `onStep`, and `activeIndex`. It is a **controlled** component, meaning when `onStep` is called a new `activeIndex` is fed to the parent, to determine the active visible option of the `options`.
+The SettingsStepper is the default component thats exported. It expects `options`, `onStep`, and `activeIndex`.
+
+It is a **controlled** component, meaning when `onStep` is called a new `activeIndex` is fed to the parent, to determine the active visible option of the `options`.
  
 #### Toggle
 
-The Toggle is imported from within the module. It is a convenience component, and is an implementation of SettingsStepper. It expects `toggled` and `onToggled`. It is a **controlled** component, meaning when `onToggle` is called a new `toggled` is fed to the parent, to determine the On or Off state.
+The Toggle is imported from within the module. It is an implementation of SettingsStepper, and a convenience component for those that doesnt want to implement a simple checkbox/toggle pattern. It expects `toggled` and `onToggled`.
+
+It is a **controlled** component, meaning when `onToggle` is called a new `toggled` is fed to the parent, to determine the On or Off state.
 
 ### Import
 
@@ -38,16 +44,20 @@ The Toggle is imported from within the module. It is a convenience component, an
 
 ### Props
 
+#### SettingsStepper
+
 | name        | required  | type           | default  | desc 
 --- | --- | --- | --- | --- |
-SettingsStepper |
-| label | ` ` | *string* | '' | Label for the component, positioned to the left of the stepper options |
-| options | **`X`** | *array* | ['On', 'Off'] | array of strings |
+| label | | *string* | | Label for the component, positioned to the left of the stepper options |
 | activeIndex | **`X`** | *integer* | 0 | Index of the active visible option, should be stored in state and changed from `onStep` |
+| options | **`X`** | *array* | [ "On", "Off" ] | array of strings |
 | onStep | **`X`** | *function* | null | Method called when stepper is progressed (clicked) forward or backward; Parameter provided is the new `activeIndex` to be set in state in the parent component.  |
+
+#### Toggle
+
+| name        | required  | type           | default  | desc 
 --- | --- | --- | --- | --- |
-Toggle |
-| label | ` ` | *string* | '' | Label for the component, positioned to the left of the toggle options |
+| label | | *string* | | Label for the component, positioned to the left of the toggle options |
 | toggled | **`X`** | *boolean* | false | Boolean that reflects whether the toggle is On or Off; Should be stored in parent component state, and changed from `onToggle` |
 | onToggle | **`X`** | *function* | null | Method called when toggle is toggled (clicked); Parameter provided is the new `toggled` boolean, to be set in state in the parent component.  |
 
