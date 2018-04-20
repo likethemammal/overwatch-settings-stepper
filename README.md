@@ -11,32 +11,55 @@ A React component modeling the Overwatch settings stepper UI element
     npm install overwatch-settings-stepper
 
 ### Fonts to include
-#### Matching the Overwatch design
 
-The font **Futura No 2 D DemiBold** is used by Activision Blizzard for much of Overwatch's design. For this component to look it's best, including the font is **required**. It can be licensed from [MyFonts](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/).
+#### Futura No 2 D DemiBold
 
-When including through CSS font-face, the font-family should match whats below:
+This font is used by Activision Blizzard for much of Overwatch's design. For this component to match the Overwatch design, including the font is **required**. It can be licensed from [MyFonts](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/).
+
+When using CSS font-face, the font-family should match whats below:
 
     font-family: 'Futura No 2 D DemiBold';
 
 ## Usage
 
+Check out example/index.js for exact usage. Below is a description.
+
+#### SettingsStepper
+
+The SettingsStepper is the default component thats exported. It expects `options`, `onStep`, and `activeIndex`. It is a **controlled** component, meaning when `onStep` is called a new `activeIndex` is fed to the parent, to determine the active visible option of the `options`.
+ 
+#### Toggle
+
+The Toggle is imported from within the module. It is a convenience component, and is an implementation of SettingsStepper. It expects `toggled` and `onToggled`. It is a **controlled** component, meaning when `onToggle` is called a new `toggled` is fed to the parent, to determine the On or Off state.
+
+### Import
+
+    import SettingsStepper, { Toggle } from 'overwatch-settings-stepper'
+
 ### Props
 
-| name        | type           | default  | desc 
---- | --- | --- | --- |
-| defaultColor | *string* | #323C50 |  |
-| activeColor | *string* | #FFFFFF |  |
-| textColor | *string* | #00C3FF |  |
-| items | *array* | null | array of objects, with required keys `id`, `label`, `icon`, `Component` |
-|  *item*.**id** | *string* | null |  |
-|  *item*.**label** | *string* | null |  |
-|  *item*.**icon** | *string* | null |  |
-|  *item*.**Component** | Component | null |  |
+| name        | required  | type           | default  | desc 
+--- | --- | --- | --- | --- |
+SettingsStepper |
+| label | ` ` | *string* | '' | Label for the component, positioned to the left of the stepper options |
+| options | **`X`** | *array* | ['On', 'Off'] | array of strings |
+| activeIndex | **`X`** | *integer* | 0 | Index of the active visible option, should be stored in state and changed from `onStep` |
+| onStep | **`X`** | *function* | null | Method called when stepper is progressed (clicked) forward or backward; Parameter provided is the new `activeIndex` to be set in state in the parent component.  |
+--- | --- | --- | --- | --- |
+Toggle |
+| label | ` ` | *string* | '' | Label for the component, positioned to the left of the toggle options |
+| toggled | **`X`** | *boolean* | false | Boolean that reflects whether the toggle is On or Off; Should be stored in parent component state, and changed from `onToggle` |
+| onToggle | **`X`** | *function* | null | Method called when toggle is toggled (clicked); Parameter provided is the new `toggled` boolean, to be set in state in the parent component.  |
 
 ## Development
 
     npm run dev
+    
+#### Running example
+
+    cd example/; npm run dev
+    
+Open [http://localhost:8080/](http://localhost:8080/)
 
 ### Tests
 
