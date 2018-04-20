@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/likethemammal/overwatch-settings-stepper.svg?branch=master)](https://travis-ci.org/likethemammal/overwatch-settings-stepper)
-[![Coverage Status](https://coveralls.io/repos/github/likethemammal/overwatch-settings-stepper/badge.svg?branch=master)](https://coveralls.io/github/likethemammal/overwatch-settings-stepper?branch=master)
-
 overwatch-settings-stepper
 =========
+
+[![Build Status](https://travis-ci.org/likethemammal/overwatch-settings-stepper.svg?branch=master)](https://travis-ci.org/likethemammal/overwatch-settings-stepper)
+[![Coverage Status](https://coveralls.io/repos/github/likethemammal/overwatch-settings-stepper/badge.svg?branch=master)](https://coveralls.io/github/likethemammal/overwatch-settings-stepper?branch=master)
 
 A React component modeling the Overwatch settings stepper UI element
 
@@ -28,19 +28,19 @@ Check out example/index.js for exact usage. Below is a description.
 
 #### SettingsStepper
 
-The SettingsStepper is the default component thats exported. It expects `options`, `onStep`, and `activeIndex`.
+The SettingsStepper is the component with the core functionality. It expects `options`, `onStep`, and `activeIndex`.
 
 It is a **controlled** component, meaning when `onStep` is called a new `activeIndex` is fed to the parent, to determine the active visible option of the `options`.
  
 #### Toggle
 
-The Toggle is imported from within the module. It is an implementation of SettingsStepper, and a convenience component for those that doesnt want to implement a simple checkbox/toggle pattern. It expects `toggled` and `onToggled`.
+The Toggle is an implementation of SettingsStepper, and a convenience component for those that dont want to implement a simple checkbox/toggle. It expects `toggled` and `onToggled`.
 
 It is a **controlled** component, meaning when `onToggle` is called a new `toggled` is fed to the parent, to determine the On or Off state.
 
 ### Import
 
-    import SettingsStepper, { Toggle } from 'overwatch-settings-stepper'
+    import { SettingsStepper, Toggle } from 'overwatch-settings-stepper'
 
 ### Props
 
