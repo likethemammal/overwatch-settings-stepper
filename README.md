@@ -6,6 +6,8 @@ overwatch-settings-stepper
 
 A React component modeling the Overwatch settings stepper UI element
 
+![Example](example/example.png)
+
 ## Installation
 
     npm install overwatch-settings-stepper
@@ -14,7 +16,7 @@ A React component modeling the Overwatch settings stepper UI element
 
 #### Futura No 2 D DemiBold
 
-This font is used by Activision Blizzard for much of Overwatch's design. For this component to match the Overwatch design, including the font is **required**. It can be licensed from [MyFonts](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/).
+This font is used by Activision Blizzard for much of Overwatch's design. For this component **to match the Overwatch design including the font is required**. It can be licensed from [MyFonts](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/).
 
 When using CSS font-face, the font-family should match whats below:
 
@@ -23,8 +25,6 @@ When using CSS font-face, the font-family should match whats below:
 ## Usage
 
 Check out example/index.js for exact usage. Below is a description.
-
-### Components
 
 #### SettingsStepper
 
@@ -48,18 +48,18 @@ It is a **controlled** component, meaning when `onToggle` is called a new `toggl
 
 | name        | required  | type           | default  | desc 
 --- | --- | --- | --- | --- |
+| activeIndex | **`X`** | *integer* | 0 | Index of the active visible option, should be stored in parent state and changed from `onStep` |
+| onStep | **`X`** | *function* | null | Method called when stepper is progressed (clicked) forward or backward; Parameter is the new `activeIndex` to be set in state in the parent component.  |
+| options | **`X`** | *array* | [ 'On', 'Off' ] | array of strings options to step through |
 | label | | *string* | | Label for the component, positioned to the left of the stepper options |
-| activeIndex | **`X`** | *integer* | 0 | Index of the active visible option, should be stored in state and changed from `onStep` |
-| options | **`X`** | *array* | [ "On", "Off" ] | array of strings |
-| onStep | **`X`** | *function* | null | Method called when stepper is progressed (clicked) forward or backward; Parameter provided is the new `activeIndex` to be set in state in the parent component.  |
 
 #### Toggle
 
 | name        | required  | type           | default  | desc 
 --- | --- | --- | --- | --- |
-| label | | *string* | | Label for the component, positioned to the left of the toggle options |
+| onToggle | **`X`** | *function* | null | Method called when toggle is toggled (clicked); Parameter is the new `toggled` boolean, to be set in state in the parent component.  |
 | toggled | **`X`** | *boolean* | false | Boolean that reflects whether the toggle is On or Off; Should be stored in parent component state, and changed from `onToggle` |
-| onToggle | **`X`** | *function* | null | Method called when toggle is toggled (clicked); Parameter provided is the new `toggled` boolean, to be set in state in the parent component.  |
+| label | | *string* | | Label for the component, positioned to the left of the toggle options |
 
 ## Development
 
