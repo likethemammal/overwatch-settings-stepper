@@ -4,42 +4,40 @@
 overwatch-settings-stepper
 =========
 
-A React component modeling the Overwatch site side navigation
+A React component modeling the Overwatch settings stepper UI element
 
 ## Installation
 
-Copy it and paste it
+    npm install overwatch-settings-stepper
 
-## Development
+### Fonts to include
+#### Matching the Overwatch design
 
-  `npm run dev`
+The font **Futura No 2 D DemiBold** is used by Activision Blizzard for much of Overwatch's design. For this component to look it's best, including the font is **required**. It can be licensed from [MyFonts](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/).
 
-## Tests
-
-  `npm test`
-
-## Publishing
-
-  `npm run build` and then publish
-
-## Contributing
-
-Its an example
+When including through CSS font-face, the font-family should match whats below:
 
     font-family: 'Futura No 2 D DemiBold';
 
-http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/
-
+## Usage
 
 ### Props
 
 | name        | type           | default  | desc 
 --- | --- | --- | --- |
-| defaultColor | string | #323c50 |  |
-| activeColor | string | #ffffff |  |
-| textColor | string | #00c3ff |  |
-| items | array | null | array of objects, with required keys `id`, `label`, `icon`, `Component` |
-| *item*.**id** | string | null |  |
-| *item*.**label** | string | null |  |
-| *item*.**icon** | string | null |  |
-| *item*.**Component** | Component | null |  |
+| defaultColor | *string* | #323C50 |  |
+| activeColor | *string* | #FFFFFF |  |
+| textColor | *string* | #00C3FF |  |
+| items | *array* | null | array of objects, with required keys `id`, `label`, `icon`, `Component` |
+|  *item*.**id** | *string* | null |  |
+|  *item*.**label** | *string* | null |  |
+|  *item*.**icon** | *string* | null |  |
+|  *item*.**Component** | Component | null |  |
+
+## Development
+
+    npm run dev
+
+### Tests
+
+    npm test
