@@ -20,13 +20,15 @@ import {
 import {
     getNewActiveIndexFromStepLeft,
     getNewActiveIndexFromStepRight,
-} from '../units/stepper'
+} from '../units/stepper/actions'
+
+import * as validations from '../units/stepper/validations'
 
 //units
 
 //required props are label and activeIndex,
 
-//if step left, and activeIndex is zero, onStep should not be called
+//if step left, and activeIndex is zero, onStep should not be called and button should be disabled, throw error if called,
 
 //if step left, and activeIndex is not zero, onStep should be called, and should return the value of the activeOption
 
@@ -58,6 +60,9 @@ export default class StepperSwitch extends Component {
             activeIndex,
             onStep,
         } = this.props
+        const shouldShowLeftStepper = _shouldShowLeftStepper(this.props)
+
+        validations.NO_STEP_LEFT(shouldShowLeftStepper)
 
         onStep(
             getNewActiveIndexFromStepLeft(activeIndex)
@@ -70,6 +75,9 @@ export default class StepperSwitch extends Component {
             activeIndex,
             onStep,
         } = this.props
+        const shouldShowRightStepper = _shouldShowRightStepper(this.props)
+
+        validations.NO_STEP_RIGHT(shouldShowRightStepper)
 
         onStep(
             getNewActiveIndexFromStepRight(activeIndex, options)

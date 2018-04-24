@@ -5,7 +5,7 @@ import {
 
 import {
     activeIndex as _activeIndex,
-} from '../units/toggle'
+} from '../units/toggle/selectors'
 
 export const toggled =  props => props.toggled
 

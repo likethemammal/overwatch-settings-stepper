@@ -12,9 +12,3 @@ export const getNewToggledFromStep = (activeIndex) => {
 
     return activeIndex === 0
 }
-
-
-//selectors
-export const activeIndex = (toggled) => {
-    return toggled ? 0 : 1
-}

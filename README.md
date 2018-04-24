@@ -8,11 +8,11 @@ A React component modeling the Overwatch settings stepper UI element
 
 ![Example](example/example.png)
 
-## Installation
+## Install
 
     npm install overwatch-settings-stepper
 
-### Fonts to include
+### Fonts
 
 #### Futura No 2 D DemiBold
 
@@ -24,19 +24,19 @@ When using CSS font-face, the font-family should match whats below:
 
 ## Usage
 
-Check out example/index.js for exact usage. Below is a description.
+Check out example/index.js for exact usage. Below are descriptions.
 
 #### SettingsStepper
 
 The SettingsStepper is the component with the core functionality. It expects `options`, `onStep`, and `activeIndex`.
 
-It is a **controlled** component, meaning when `onStep` is called a new `activeIndex` is fed to the parent, to determine the active visible option of the `options`.
+It is a **controlled** component, meaning when `onStep` is called, a new `activeIndex` is fed to the parent to determine the active visible option of the `options`.
  
 #### Toggle
 
-The Toggle is an implementation of SettingsStepper, and a convenience component for those that dont want to implement a simple checkbox/toggle. It expects `toggled` and `onToggled`.
+The Toggle is an implementation of SettingsStepper, and a convenience component for those that dont want to implement a simple checkbox/toggle. It expects `toggled` and `onToggle`.
 
-It is a **controlled** component, meaning when `onToggle` is called a new `toggled` is fed to the parent, to determine the On or Off state.
+It is a **controlled** component, meaning when `onToggle` is called, a new `toggled` is fed to the parent to determine the On or Off state.
 
 ### Import
 

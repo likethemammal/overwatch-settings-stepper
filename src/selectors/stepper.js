@@ -6,7 +6,7 @@ import {
     activeOption as _activeOption,
     shouldShowLeftStepper as _shouldShowLeftStepper,
     shouldShowRightStepper as _shouldShowRightStepper,
-} from '../units/stepper'
+} from '../units/stepper/selectors'
 
 export const options = props => props.options
 export const activeIndex =  props => props.activeIndex

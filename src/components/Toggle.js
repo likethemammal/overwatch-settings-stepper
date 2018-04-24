@@ -8,7 +8,7 @@ import {
 
 import {
     getNewToggledFromStep
-} from '../units/toggle'
+} from '../units/toggle/actions'
 
 export default class Toggle extends Component {
 
