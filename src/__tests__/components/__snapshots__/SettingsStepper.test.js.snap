@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SettingsStepper Snapshot 0 should match 1`] = `
+<StepperSwitch
+  activeIndex={0}
+  onStep={[Function]}
+  options={
+    Array [
+      "On",
+      "Off",
+    ]
+  }
+>
+  <div>
+    <div>
+      <div />
+      <div>
+        <button
+          disabled={true}
+          onClick={[Function]}
+        >
+          <t
+            className="SVG-container"
+            raw="test-file-stub"
+          >
+            <div
+              className="SVG-container"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+            />
+          </t>
+        </button>
+        <div
+          onClick={[Function]}
+        >
+          On
+        </div>
+        <button
+          disabled={false}
+          onClick={[Function]}
+        >
+          <t
+            className="SVG-container"
+            raw="test-file-stub"
+          >
+            <div
+              className="SVG-container"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+            />
+          </t>
+        </button>
+      </div>
+    </div>
+  </div>
+</StepperSwitch>
+`;
+
+exports[`SettingsStepper Snapshot 1 should match 1`] = `
+<StepperSwitch
+  activeIndex={1}
+  onStep={[Function]}
+  options={
+    Array [
+      "On",
+      "Off",
+    ]
+  }
+>
+  <div>
+    <div>
+      <div />
+      <div>
+        <button
+          disabled={false}
+          onClick={[Function]}
+        >
+          <t
+            className="SVG-container"
+            raw="test-file-stub"
+          >
+            <div
+              className="SVG-container"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+            />
+          </t>
+        </button>
+        <div
+          onClick={[Function]}
+        >
+          Off
+        </div>
+        <button
+          disabled={true}
+          onClick={[Function]}
+        >
+          <t
+            className="SVG-container"
+            raw="test-file-stub"
+          >
+            <div
+              className="SVG-container"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "test-file-stub",
+                }
+              }
+            />
+          </t>
+        </button>
+      </div>
+    </div>
+  </div>
+</StepperSwitch>
+`;

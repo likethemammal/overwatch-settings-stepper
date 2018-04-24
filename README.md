@@ -4,6 +4,11 @@ overwatch-settings-stepper
 [![Build Status](https://travis-ci.org/likethemammal/overwatch-settings-stepper.svg?branch=master)](https://travis-ci.org/likethemammal/overwatch-settings-stepper)
 [![Coverage Status](https://coveralls.io/repos/github/likethemammal/overwatch-settings-stepper/badge.svg?branch=master)](https://coveralls.io/github/likethemammal/overwatch-settings-stepper?branch=master)
 
+[![npm Version](https://img.shields.io/npm/v/overwatch-settings-stepper.svg?style=flat-square)](https://www.npmjs.com/package/overwatch-settings-stepper)
+[![npm Downloads](https://img.shields.io/npm/dm/overwatch-settings-stepper.svg?style=flat-square)](https://www.npmjs.com/package/overwatch-settings-stepper)
+[![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://www.npmjs.com/package/overwatch-settings-stepper)
+
+
 A React component modeling the Overwatch settings stepper UI element
 
 ![Example](example/example.png)
