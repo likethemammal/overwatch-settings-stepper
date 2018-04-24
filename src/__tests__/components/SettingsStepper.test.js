@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'enzyme';
 
-import general from '../../../../../general-components'
+import general from '@likethemammal/general-components'
 
 const shared = general.__tests__._shared.tests
 

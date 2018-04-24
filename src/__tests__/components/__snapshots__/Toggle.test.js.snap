@@ -1,3 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toggle given a label, toggled value, and onToggle Snapshot 0 should match 1`] = `undefined`;
+exports[`Toggle given a label, toggled value, and onToggle Snapshot 0 should match 1`] = `
+<Toggle
+  label="some test label"
+  onToggle={[Function]}
+  toggled={true}
+>
+  <StepperSwitch
+    activeIndex={0}
+    label="some test label"
+    onStep={[Function]}
+    options={
+      Array [
+        "On",
+        "Off",
+      ]
+    }
+  >
+    <div>
+      <div>
+        <div>
+          some test label
+        </div>
+        <div>
+          <button
+            disabled={true}
+            onClick={[Function]}
+          >
+            <t
+              className="SVG-container"
+              raw="test-file-stub"
+            >
+              <div
+                className="SVG-container"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+              />
+            </t>
+          </button>
+          <div
+            onClick={[Function]}
+          >
+            On
+          </div>
+          <button
+            disabled={false}
+            onClick={[Function]}
+          >
+            <t
+              className="SVG-container"
+              raw="test-file-stub"
+            >
+              <div
+                className="SVG-container"
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "test-file-stub",
+                  }
+                }
+              />
+            </t>
+          </button>
+        </div>
+      </div>
+    </div>
+  </StepperSwitch>
+</Toggle>
+`;
