@@ -10,6 +10,7 @@ import {
 
 export const options = props => props.options
 export const activeIndex =  props => props.activeIndex
+export const onStep =  props => props.onStep
 
 export const activeOption = createSelector(
     activeIndex,
@@ -27,4 +28,3 @@ export const shouldShowRightStepper = createSelector(
     options,
     _shouldShowRightStepper
 )
-

@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 
 import css from './SettingsStepper.less'
 
-import _ from 'underscore'
-
 import LeftSVG from 'svg-icon/dist/svg/mfglabs/chevron_left.svg'
 import RightSVG from 'svg-icon/dist/svg/mfglabs/chevron_right.svg'
 
@@ -12,17 +10,19 @@ import general from '@likethemammal/general-components'
 const { SVG } = general.components
 
 import {
+    onStep as _onStep,
+    options as _options,
+    activeIndex as _activeIndex,
     activeOption as _activeOption,
     shouldShowLeftStepper as _shouldShowLeftStepper,
     shouldShowRightStepper as _shouldShowRightStepper,
 } from '../selectors/stepper'
 
 import {
-    getNewActiveIndexFromStepLeft,
-    getNewActiveIndexFromStepRight,
+    onStepLeft as _onStepLeft,
+    onStepRight as _onStepRight,
+    onStepMain as _onStepMain,
 } from '../units/stepper/actions'
-
-import * as validations from '../units/stepper/validations'
 
 //todo: props warning if activeIndex is larger than options length
 
@@ -37,31 +37,40 @@ export default class StepperSwitch extends Component {
     }
 
     onStepLeft = () => {
-        const {
+        const activeIndex = _activeIndex(this.props)
+        const shouldShowLeftStepper = _shouldShowLeftStepper(this.props)
+        const options = _options(this.props)
+        const onStep = _onStep(this.props)
+
+        _onStepLeft(
+            options,
             activeIndex,
             onStep,
-        } = this.props
-        const shouldShowLeftStepper = _shouldShowLeftStepper(this.props)
-
-        validations.NO_STEP_LEFT(shouldShowLeftStepper)
-
-        onStep(
-            getNewActiveIndexFromStepLeft(activeIndex)
+            shouldShowLeftStepper,
         )
     }
 
     onStepRight = () => {
-        const {
+        const activeIndex = _activeIndex(this.props)
+        const shouldShowRightStepper = _shouldShowRightStepper(this.props)
+        const options = _options(this.props)
+        const onStep = _onStep(this.props)
+
+        _onStepRight(
             options,
             activeIndex,
             onStep,
-        } = this.props
+            shouldShowRightStepper,
+        )
+    }
+
+    onStepMain = () => {
         const shouldShowRightStepper = _shouldShowRightStepper(this.props)
 
-        validations.NO_STEP_RIGHT(shouldShowRightStepper)
-
-        onStep(
-            getNewActiveIndexFromStepRight(activeIndex, options)
+        _onStepMain(
+            shouldShowRightStepper,
+            this.onStepLeft,
+            this.onStepRight
         )
     }
 
@@ -75,7 +84,6 @@ export default class StepperSwitch extends Component {
         const shouldShowLeftStepper = _shouldShowLeftStepper(this.props)
         const shouldShowRightStepper = _shouldShowRightStepper(this.props)
 
-        const onMainStep = shouldShowRightStepper ? this.onStepRight : this.onStepLeft
 
         return <div className={css.container}>
 
@@ -96,7 +104,7 @@ export default class StepperSwitch extends Component {
                     </button>
                     <div
                         className={css.active}
-                        onClick={onMainStep}
+                        onClick={this.onStepMain}
                     >
                         {activeOption}
                     </div>

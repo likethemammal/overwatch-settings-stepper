@@ -3,7 +3,8 @@ import general from '@likethemammal/overwatch-general'
 
 const { validations } = general
 
-//actions
+import * as stepper_validations from './validations'
+
 export const getNewActiveIndexFromStepLeft = (activeIndex) => {
 
     validations.ACTIVE_INDEX_NONE(activeIndex)
@@ -29,3 +30,39 @@ export const getNewActiveIndexFromStepRight = (activeIndex, options) => {
     return activeIndex + 1
 
 }
+
+export const onStepLeft = (
+    options,
+    activeIndex,
+    onStep,
+    shouldShowRightStepper,
+) => {
+
+    stepper_validations.NO_STEP_LEFT(shouldShowRightStepper)
+
+    onStep(
+        getNewActiveIndexFromStepLeft(activeIndex, options)
+    )
+}
+
+export const onStepRight = (
+    options,
+    activeIndex,
+    onStep,
+    shouldShowRightStepper,
+) => {
+
+    stepper_validations.NO_STEP_RIGHT(shouldShowRightStepper)
+
+    onStep(
+        getNewActiveIndexFromStepRight(activeIndex, options)
+    )
+}
+
+export const onStepMain = (
+    shouldShowRightStepper,
+    onStepLeft,
+    onStepRight,
+) => shouldShowRightStepper ? onStepRight() : onStepLeft()
+
+

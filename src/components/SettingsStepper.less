@@ -32,12 +32,6 @@
 .stepper {
     composes: cf from '@likethemammal/general-components/bin/general.css';
     float: right;
-
-    &:hover {
-        .active {
-            background: @white_faded_row_hover;
-        }
-    }
 }
 
 .active {
@@ -46,6 +40,10 @@
     width: 300px;
     text-align: center;
     cursor: pointer;
+
+    &:hover {
+        background: @white_faded_row_hover;
+    }
 }
 
 .icon_container {
