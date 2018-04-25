@@ -22,6 +22,7 @@ export const getNewActiveIndexFromStepRight = (activeIndex, options) => {
 
     validations.ACTIVE_INDEX_NONE(activeIndex)
     validations.OPTIONS_NONE(activeIndex, options)
+    validations.ACTIVE_INDEX_TOO_SMALL(activeIndex)
     validations.ACTIVE_INDEX_TOO_LARGE(activeIndex, options)
 
     if (activeIndex === options.length - 1) {
