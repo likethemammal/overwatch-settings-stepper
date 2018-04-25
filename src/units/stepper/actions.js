@@ -37,10 +37,10 @@ export const onStepLeft = (
     options,
     activeIndex,
     onStep,
-    shouldShowRightStepper,
+    shouldShowLeftStepper,
 ) => {
 
-    stepper_validations.NO_STEP_LEFT(shouldShowRightStepper)
+    stepper_validations.NO_STEP_LEFT(shouldShowLeftStepper)
 
     onStep(
         getNewActiveIndexFromStepLeft(activeIndex, options)
