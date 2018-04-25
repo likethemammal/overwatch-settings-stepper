@@ -6,7 +6,7 @@ overwatch-settings-stepper
 
 [![npm Version](https://img.shields.io/npm/v/overwatch-settings-stepper.svg?style=flat-square)](https://www.npmjs.com/package/overwatch-settings-stepper)
 [![npm Downloads](https://img.shields.io/npm/dm/overwatch-settings-stepper.svg?style=flat-square)](https://www.npmjs.com/package/overwatch-settings-stepper)
-[![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://www.npmjs.com/package/overwatch-settings-stepper)
+[![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://github.com/likethemammal/overwatch-settings-stepper/blob/master/LICENSE)
 
 
 A React component modeling the Overwatch settings stepper UI element
@@ -79,3 +79,7 @@ Open [http://localhost:8080/](http://localhost:8080/)
 ### Tests
 
     npm test
+
+### License
+
+[![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://github.com/likethemammal/overwatch-settings-stepper/blob/master/LICENSE)
