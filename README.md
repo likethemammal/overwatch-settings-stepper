@@ -15,13 +15,13 @@ A React component modeling the Overwatch settings stepper UI element
 
 ## Install
 
-    npm install overwatch-settings-stepper
+    npm install --save overwatch-settings-stepper
 
 ### Fonts
 
 #### Futura No 2 D DemiBold
 
-This font is used by Activision Blizzard for much of Overwatch's design. For this component **to match the Overwatch design including the font is required**. It can be licensed from [MyFonts](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/).
+This font is used by Activision Blizzard for much of Overwatch's design. For this component **to match the Overwatch design, including the font is required**. It can be licensed from [MyFonts](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/).
 
 When using CSS font-face, the font-family should match whats below:
 
@@ -29,23 +29,25 @@ When using CSS font-face, the font-family should match whats below:
 
 ## Usage
 
-Check out example/index.js for exact usage. Below are descriptions.
+Check out [example/index.js](example/index.js) for exact usage. Descriptions are below.
 
 ### Import
 
     import { SettingsStepper, Toggle } from 'overwatch-settings-stepper'
 
-### SettingsStepper
+### Components
+
+#### SettingsStepper
 
 The SettingsStepper is the component with the core functionality. It expects `options`, `onStep`, and `activeIndex`.
 
 It is a **controlled** component, meaning when `onStep` is called, a new `activeIndex` is fed to the parent to determine the active visible option of the `options`.
  
-### Toggle
+#### Toggle
 
 The Toggle is an implementation of SettingsStepper, and a convenience component for those that dont want to implement a simple checkbox/toggle. It expects `toggled` and `onToggle`.
 
-It is a **controlled** component, meaning when `onToggle` is called, a new `toggled` is fed to the parent to determine the On or Off state.
+It is a **controlled** component, meaning when `onToggle` is called, a new `toggled` is fed to the parent to determine the Toggle's On or Off state.
 
 ### Props
 
@@ -54,7 +56,7 @@ It is a **controlled** component, meaning when `onToggle` is called, a new `togg
 | name        | required  | type           | default  | desc 
 --- | --- | --- | --- | --- |
 | activeIndex | **`X`** | *integer* | 0 | Index of the active visible option, should be stored in parent state and changed from `onStep` |
-| onStep | **`X`** | *function* | null | Method called when stepper is progressed (clicked) forward or backward; Parameter is the new `activeIndex` to be set in state in the parent component.  |
+| onStep | **`X`** | *function* | null | Callback method called when stepper is progressed (clicked) forward or backward; Parameter is the new `activeIndex` to be set in state in the parent component.  |
 | options | **`X`** | *array* | [ 'On', 'Off' ] | array of strings options to step through |
 | label | | *string* | | Label for the component, positioned to the left of the stepper options |
 
@@ -62,7 +64,7 @@ It is a **controlled** component, meaning when `onToggle` is called, a new `togg
 
 | name        | required  | type           | default  | desc 
 --- | --- | --- | --- | --- |
-| onToggle | **`X`** | *function* | null | Method called when toggle is toggled (clicked); Parameter is the new `toggled` boolean, to be set in state in the parent component.  |
+| onToggle | **`X`** | *function* | null | Callback method called when toggle is toggled (clicked); Parameter is the new `toggled` boolean, to be set in state in the parent component.  |
 | toggled | **`X`** | *boolean* | false | Boolean that reflects whether the toggle is On or Off; Should be stored in parent component state, and changed from `onToggle` |
 | label | | *string* | | Label for the component, positioned to the left of the toggle options |
 
@@ -70,7 +72,7 @@ It is a **controlled** component, meaning when `onToggle` is called, a new `togg
 
     npm run dev
     
-#### Running example
+#### Running the example
 
     cd example/; npm run dev
     
@@ -82,4 +84,10 @@ Open [http://localhost:8080/](http://localhost:8080/) to view example
 
 ### License
 
-[Chris Dolphin](https://github.com/likethemammal) [![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://github.com/likethemammal/overwatch-settings-stepper/blob/master/LICENSE)
+Made with 🍊 by [Chris Dolphin](https://github.com/likethemammal)
+
+[![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://github.com/likethemammal/overwatch-settings-stepper/blob/master/LICENSE)
+
+#### Fonts
+
+The font **Futura No 2 D DemiBold** should be licensed through [MyFonts.com](http://www.myfonts.com/fonts/urw/futura-no-2/futura-no2-d-demi-bold/)
