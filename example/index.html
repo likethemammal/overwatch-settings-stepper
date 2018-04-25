@@ -4,15 +4,27 @@
     <title>Your app name</title>
     <meta charset="utf-8">
     <style>
-        html, body {
+        html {
             background:
                 linear-gradient(
                     125deg,
-                    #ccecff,
-                    #f6f7ff,
-                    #bcbaff
-                )
-                no-repeat;
+                    rgba(255,255,255,0.15),
+                    rgba(255,255,255,0.2)
+                ),
+                url('example_blur.png')
+                no-repeat
+                center center;
+            background-size: cover;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 10px 0 10px;
         }
     </style>
 
