@@ -12,12 +12,7 @@ describe('getNewToggledFromStep', () => {
     describe('given an activeIndex', () => {
 
         validations.NO_VALUE(getNewToggledFromStep)
-
-        test('if activeIndex is less than zero, throw an error', () => {
-            expect(() => {
-                getNewToggledFromStep(-1)
-            }).toThrow()
-        })
+        validations.NEGATIVE_NUMBER(getNewToggledFromStep)
 
         test('if activeIndex is greater than zero, return false', () => {
             expect(

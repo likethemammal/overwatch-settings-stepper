@@ -12,12 +12,7 @@ describe('getNewActiveIndexFromStepLeft', () => {
     describe('given an activeIndex', () => {
 
         validations.NO_VALUE(getNewActiveIndexFromStepLeft)
-
-        test('if activeIndex is less than zero, throw an error', () => {
-            expect(() => {
-                getNewActiveIndexFromStepLeft(-1)
-            }).toThrow()
-        })
+        validations.NEGATIVE_NUMBER(getNewActiveIndexFromStepLeft)
 
         test('if activeIndex is equal to zero, return activeIndex', () => {
             expect(
