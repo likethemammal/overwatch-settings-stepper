@@ -31,21 +31,21 @@ When using CSS font-face, the font-family should match whats below:
 
 Check out example/index.js for exact usage. Below are descriptions.
 
-#### SettingsStepper
+### Import
+
+    import { SettingsStepper, Toggle } from 'overwatch-settings-stepper'
+
+### SettingsStepper
 
 The SettingsStepper is the component with the core functionality. It expects `options`, `onStep`, and `activeIndex`.
 
 It is a **controlled** component, meaning when `onStep` is called, a new `activeIndex` is fed to the parent to determine the active visible option of the `options`.
  
-#### Toggle
+### Toggle
 
 The Toggle is an implementation of SettingsStepper, and a convenience component for those that dont want to implement a simple checkbox/toggle. It expects `toggled` and `onToggle`.
 
 It is a **controlled** component, meaning when `onToggle` is called, a new `toggled` is fed to the parent to determine the On or Off state.
-
-### Import
-
-    import { SettingsStepper, Toggle } from 'overwatch-settings-stepper'
 
 ### Props
 
@@ -74,7 +74,7 @@ It is a **controlled** component, meaning when `onToggle` is called, a new `togg
 
     cd example/; npm run dev
     
-Open [http://localhost:8080/](http://localhost:8080/)
+Open [http://localhost:8080/](http://localhost:8080/) to view example
 
 ### Tests
 
@@ -82,4 +82,4 @@ Open [http://localhost:8080/](http://localhost:8080/)
 
 ### License
 
-[![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://github.com/likethemammal/overwatch-settings-stepper/blob/master/LICENSE)
+[Chris Dolphin](https://github.com/likethemammal) [![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg?style=flat-square)](https://github.com/likethemammal/overwatch-settings-stepper/blob/master/LICENSE)
