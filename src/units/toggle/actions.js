@@ -7,6 +7,7 @@ export const getNewToggledFromStep = (activeIndex) => {
 
     validations.ACTIVE_INDEX_NONE(activeIndex)
     validations.ACTIVE_INDEX_NOT_NUMBER(activeIndex)
+    validations.ACTIVE_INDEX_TOO_SMALL(activeIndex)
 
     return activeIndex === 0
 }
