@@ -9,7 +9,7 @@ import {
 } from '../../../../units/stepper/actions'
 
 describe('getNewActiveIndexFromStepRight', () => {
-    describe('given an activeIndex', () => {
+    describe('given an activeIndex and options', () => {
 
         validations.NO_VALUE(getNewActiveIndexFromStepRight)
         validations.NEGATIVE_NUMBER(getNewActiveIndexFromStepRight)
