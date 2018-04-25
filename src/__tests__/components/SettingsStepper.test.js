@@ -68,11 +68,32 @@ describe('SettingsStepper', () => {
         mock_onStep,
     )
 
+    shared.SHOULD_CALL_MOCK_FROM_SIMULATE(
+        disabled_right_component.find('button').at(0),
+        mock_onStep,
+    )
+
     shared.INPUT_SHOULD_RECEIVE_DISABLED(
         disabled_left_component.find('button').at(0)
     )
 
-    test('if activeIndex is less than option\'s first index, onStepLeft should not be called', () => {
+    shared.INPUT_SHOULD_RECEIVE_DISABLED(
+        disabled_right_component.find('button').at(1)
+    )
+
+    test('if no activeIndex set through props, activeIndex should default to 0', () => {
+        expect(
+            disabled_left_component.find(SettingsStepper).props().activeIndex
+        ).toEqual(0)
+    })
+
+    test('if no options set through props, options should default to On/Off array for Toggle', () => {
+        expect(
+            disabled_left_component.find(SettingsStepper).props().options
+        ).toEqual(['On', 'Off'])
+    })
+
+    test('if activeIndex is equal to option\'s first index, onStepLeft should not be called', () => {
 
         try {
             disabled_left_component_2.find(SettingsStepper).instance().onStepLeft()
@@ -91,18 +112,36 @@ describe('SettingsStepper', () => {
         }).toThrow()
     })
 
-    test('if activeIndex is not zero, onStep should be called, and should return the value of the new activeOption', () => {
+    describe('if activeIndex is not zero, onStep should be called, and should return the value of the new activeOption', () => {
+
         expect(
             changable_activeIndex
         ).toEqual(2)
 
-        component.find(SettingsStepper).instance().onStepRight()
+        test('onStepRight', () => {
 
-        expect(
-            changable_activeIndex
-        ).toEqual(3)
+            component.find(SettingsStepper).instance().onStepRight()
+
+            expect(
+                changable_activeIndex
+            ).toEqual(3)
+        })
+
+        test('onStepLeft', () => {
+
+            component.find(SettingsStepper).instance().onStepLeft()
+
+            expect(
+                changable_activeIndex
+            ).toEqual(1)
+        })
+
     })
 
-
+    test('if activeIndex is the last option, onStepRight should throw an error', () => {
+        expect(() => {
+            disabled_right_component.find(SettingsStepper).instance().onStepRight()
+        }).toThrow()
+    })
 
 })

@@ -24,26 +24,7 @@ import {
 
 import * as validations from '../units/stepper/validations'
 
-//units
-
-//required props are label and activeIndex,
-
-//if step left, and activeIndex is zero, onStep should not be called and button should be disabled, throw error if called,
-
-//if step left, and activeIndex is not zero, onStep should be called, and should return the value of the activeOption
-
-//if step right, and activeIndex is the last option, onStep should not be called
-
-//if step right, and activeIndex isnt the last option, onStep should be called, and return the value of the activeOption
-
-//if no options are provided, default initial value should be 0
-
-// if activeIndex is 0, left stepper should not be clickable
-
-// if activeIndex is options.length, right stepper should not be clickable
-
-//props warning if activeIndex is larger than options length
-
+//todo: props warning if activeIndex is larger than options length
 
 export default class StepperSwitch extends Component {
 
