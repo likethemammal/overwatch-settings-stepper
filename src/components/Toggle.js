@@ -3,11 +3,12 @@ import React, { Component } from 'react'
 import SettingsStepper from './SettingsStepper'
 
 import {
-    activeIndex as _activeIndex
+    activeIndex as _activeIndex,
+    onToggle as _onToggle,
 } from '../selectors/toggle'
 
 import {
-    getNewToggledFromStep
+    onStep as _onStep
 } from '../units/toggle/actions'
 
 export default class Toggle extends Component {
@@ -19,13 +20,12 @@ export default class Toggle extends Component {
     }
 
     onStep = (activeIndex) => {
+        const onToggle = _onToggle(this.props)
 
-        const toggled = getNewToggledFromStep(activeIndex)
-
-        this.props.onToggle(
-            toggled
+        _onStep(
+            activeIndex,
+            onToggle,
         )
-
     }
 
     render() {
