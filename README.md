@@ -82,7 +82,7 @@ Open [http://localhost:8080/](http://localhost:8080/) to view example
 
     npm test
 
-### License
+## License
 
 Made with 🍊 by [Chris Dolphin](https://github.com/likethemammal)
 
