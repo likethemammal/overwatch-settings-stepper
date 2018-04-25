@@ -9,6 +9,7 @@ export const getNewActiveIndexFromStepLeft = (activeIndex) => {
 
     validations.ACTIVE_INDEX_NONE(activeIndex)
     validations.ACTIVE_INDEX_NOT_NUMBER(activeIndex)
+    validations.ACTIVE_INDEX_TOO_SMALL(activeIndex)
 
     if (activeIndex === 0) {
         return activeIndex
