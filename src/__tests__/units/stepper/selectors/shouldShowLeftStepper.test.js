@@ -9,7 +9,7 @@ import {
 } from '../../../../units/stepper/selectors'
 
 describe('shouldShowLeftStepper', () => {
-    describe('given an activeIndex and option', () => {
+    describe('given an activeIndex', () => {
 
         validations.NO_VALUE(shouldShowLeftStepper)
         validations.NOT_NUMBER(shouldShowLeftStepper)
