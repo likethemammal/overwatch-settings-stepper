@@ -72,7 +72,6 @@ Check out [example/index.js](example/index.js) for working example or below for 
 ### Components
 
 #### SettingsStepper
->>>>>>> Update example and update README, add example image to README
 
 The SettingsStepper is the component with the core functionality. It expects `options`, `onStep`, and `activeIndex`.
 
