@@ -8,8 +8,7 @@ overwatch-settings-stepper
 [![npm Downloads](https://img.shields.io/npm/dm/overwatch-settings-stepper.svg)](https://www.npmjs.com/package/overwatch-settings-stepper)
 [![license](https://img.shields.io/github/license/likethemammal/overwatch-settings-stepper.svg)](https://github.com/likethemammal/overwatch-settings-stepper/blob/master/LICENSE)
 
-
-A React component modeling the Overwatch settings stepper UI element
+A React component modeling the Overwatch Settings the stepper and toggle UI elements.
 
 ![Example](example/example.png)
 
@@ -29,15 +28,51 @@ When using CSS font-face, the font-family should match whats below:
 
 ## Usage
 
-Check out [example/index.js](example/index.js) for exact usage. Descriptions are below.
-
-### Import
+Check out [example/index.js](example/index.js) for working example or below for exact usage.
 
     import { SettingsStepper, Toggle } from 'overwatch-settings-stepper'
+
+    class Example extends React.Component {
+        state = {
+            activeIndex: 1,
+        }
+    
+        onStep = (activeIndex) => {
+    
+            //... so some logic
+    
+            this.setState({
+                activeIndex
+            })
+    
+        }
+    
+        render() {
+    
+            const { activeIndex } = this.state
+    
+            return <SettingsStepper
+                {...{
+                    activeIndex,
+                    onStep: this.onStep,
+                    label: 'difficulty',
+                    options: [
+                        'Easy',
+                        'Medium',
+                        'Hard',
+                        'Nightmare',
+                        'Insane',
+                        'Crazypants'
+                    ],
+                }}
+            />
+        }
+    }
 
 ### Components
 
 #### SettingsStepper
+>>>>>>> Update example and update README, add example image to README
 
 The SettingsStepper is the component with the core functionality. It expects `options`, `onStep`, and `activeIndex`.
 
@@ -71,14 +106,23 @@ It is a **controlled** component, meaning when `onToggle` is called, a new `togg
 ## Development
 
     npm run dev
+
+#### Running the example
+
+Install it:
+
+    cd example/; npm install
     
 #### Running the example
 
-    cd example/; npm run dev
-    
-Open [http://localhost:8080/](http://localhost:8080/) to view example
+Run it while developing (in another terminal window):
 
-### Tests
+    cd example/; npm run dev
+
+Open [http://localhost:8080/](http://localhost:8080/) to see the running example
+
+
+## Tests
 
     npm test
 
