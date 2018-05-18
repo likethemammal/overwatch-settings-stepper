@@ -7,9 +7,9 @@ import * as stepper_validations from './validations'
 
 export const getNewActiveIndexFromStepLeft = (activeIndex) => {
 
-    validations.ACTIVE_INDEX_NONE(activeIndex)
-    validations.ACTIVE_INDEX_NOT_NUMBER(activeIndex)
-    validations.ACTIVE_INDEX_TOO_SMALL(activeIndex)
+    validations.INDEX_NONE(activeIndex)
+    validations.INDEX_NOT_NUMBER(activeIndex)
+    validations.INDEX_TOO_SMALL(activeIndex)
 
     if (activeIndex === 0) {
         return activeIndex
@@ -20,10 +20,10 @@ export const getNewActiveIndexFromStepLeft = (activeIndex) => {
 
 export const getNewActiveIndexFromStepRight = (activeIndex, options) => {
 
-    validations.ACTIVE_INDEX_NONE(activeIndex)
-    validations.ACTIVE_INDEX_TOO_SMALL(activeIndex)
+    validations.INDEX_NONE(activeIndex)
+    validations.INDEX_TOO_SMALL(activeIndex)
     validations.OPTIONS_NONE(activeIndex, options)
-    validations.ACTIVE_INDEX_TOO_LARGE(activeIndex, options)
+    validations.INDEX_TOO_LARGE(activeIndex, options)
 
     if (activeIndex === options.length - 1) {
         return activeIndex

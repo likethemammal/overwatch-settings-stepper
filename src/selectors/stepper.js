@@ -2,8 +2,11 @@ import {
     createSelector
 } from 'reselect'
 
+import general from '@likethemammal/overwatch-general'
+
+const { units } = general
+
 import {
-    activeOption as _activeOption,
     shouldShowLeftStepper as _shouldShowLeftStepper,
     shouldShowRightStepper as _shouldShowRightStepper,
 } from '../units/stepper/selectors'
@@ -15,7 +18,7 @@ export const onStep =  props => props.onStep
 export const activeOption = createSelector(
     activeIndex,
     options,
-    _activeOption
+    units.activeOption
 )
 
 export const shouldShowLeftStepper = createSelector(

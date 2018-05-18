@@ -69,7 +69,7 @@ exports[`SettingsStepper Snapshot 0 should match 1`] = `
 exports[`SettingsStepper Snapshot 1 should match 1`] = `
 <StepperSwitch
   activeIndex={0}
-  onStep={[Function]}
+  onStep={[MockFunction]}
   options={
     Array [
       "On",
@@ -131,7 +131,7 @@ exports[`SettingsStepper Snapshot 1 should match 1`] = `
 exports[`SettingsStepper Snapshot 2 should match 1`] = `
 <StepperSwitch
   activeIndex={0}
-  onStep={[Function]}
+  onStep={[MockFunction]}
   options={
     Array [
       "On",
@@ -193,7 +193,7 @@ exports[`SettingsStepper Snapshot 2 should match 1`] = `
 exports[`SettingsStepper Snapshot 3 should match 1`] = `
 <StepperSwitch
   activeIndex={1}
-  onStep={[Function]}
+  onStep={[MockFunction]}
   options={
     Array [
       "On",

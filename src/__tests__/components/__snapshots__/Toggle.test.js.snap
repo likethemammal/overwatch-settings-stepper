@@ -3,7 +3,7 @@
 exports[`Toggle given a label, toggled value, and onToggle Snapshot 0 should match 1`] = `
 <Toggle
   label="some test label"
-  onToggle={[Function]}
+  onToggle={[MockFunction]}
   toggled={true}
 >
   <StepperSwitch
